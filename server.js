@@ -1,7 +1,5 @@
 const express = require("express");
 const app = express();
-const { Sequelize } = require("sequelize");
-const bands = require("./controllers/bands_controller");
 
 require("dotenv").config();
 app.use(express.json());
@@ -17,6 +15,14 @@ app.get("/", (req, res) => {
 // CONTROLLERS
 const bandsController = require("./controllers/bands_controller");
 app.use("/bands", bandsController);
+
+//events
+const eventsController = require("./controllers/events_controller")
+app.use("/events", eventsController)
+
+//stages
+const stagesController = require("./controllers/stages_controller")
+app.use("/stages", stagesController)
 
 // LISTEN
 app.listen(process.env.PORT, () => {
