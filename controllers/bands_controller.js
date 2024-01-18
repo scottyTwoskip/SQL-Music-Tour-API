@@ -33,8 +33,6 @@ bands.get("/:id", async (req, res) => {
     }
 });
 
-
-
 // create a band
 bands.post("/", async (req, res) => {
     try {
